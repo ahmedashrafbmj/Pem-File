@@ -1,0 +1,25 @@
+docker run -d -p :port image name
+docker-compose up --build 
+rm -rf backend.ml(for delete any file)
+
+
+cd /etc/nginx/sites-enabled/
+ls
+vim backend.ml ==================> for reverse proxy  (server {
+    listen 80;
+    server_name terakarachi.com ==> (domainname;
+
+    location / {
+
+        proxy_pass http://18.191.246.31:9000 ==>(ip of aws);
+    }
+}
+
+
+nginx: configuration file /etc/nginx/nginx.conf test is successful  (((( nginx -t ))))))
+
+
+
+
+sudo apt install certbot python3-certbot-nginx ( for ssl)
+sudo certbot --nginx -d terakarachi.com
